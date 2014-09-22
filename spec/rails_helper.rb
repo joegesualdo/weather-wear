@@ -27,8 +27,9 @@ VCR.configure do |c|
   # "spec/cassettes" is the directory where your cassettes (recordings from 
   # external API requests) will be saved.  These are the files that will be 
   # replayed in subsequent test runs.
-  c.cassette_library_dir     = "spec/cassettes"
+  c.cassette_library_dir     = "spec/fixtures/cassette_library"
   c.hook_into                :webmock
+  c.default_cassette_options = { re_record_interval: 7.days }
 end
 
 RSpec.configure do |config|
