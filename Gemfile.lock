@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
     better_errors (2.0.0)
@@ -42,6 +43,8 @@ GEM
     columnize (0.8.9)
     coolline (0.5.0)
       unicode_utils (~> 1.4)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     database_cleaner (1.3.0)
     debug_inspector (0.0.2)
     debugger (1.6.8)
@@ -175,6 +178,7 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
+    safe_yaml (1.0.3)
     shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
     slop (3.6.0)
@@ -198,6 +202,10 @@ GEM
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     unicode_utils (1.4.0)
+    vcr (2.9.3)
+    webmock (1.18.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
     yard (0.8.7.4)
     zeus (0.15.1)
       method_source (>= 0.6.7)
@@ -219,4 +227,6 @@ DEPENDENCIES
   rails (= 4.1.0)
   rspec-rails (~> 3.0.0)
   shoulda-matchers
+  vcr
+  webmock
   zeus
