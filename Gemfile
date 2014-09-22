@@ -7,6 +7,9 @@ gem 'rails', '4.1.0'
 # Database ======================
 gem 'pg'
 
+# Authentication ================
+gem 'devise'
+
 # API Formatting ========================
 gem 'jbuilder', '~> 2.0'
 
