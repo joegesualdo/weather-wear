@@ -180,6 +180,7 @@ DEPENDENCIES
   jazz_hands
   jbuilder (~> 2.0)
   pg
+  pry-rails
   rails (= 4.1.0)
   rspec-rails (~> 3.0.0)
   shoulda-matchers
