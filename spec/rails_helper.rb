@@ -7,6 +7,7 @@ require 'rspec/rails'
 require 'shoulda/matchers'
 require 'vcr'
 require 'webmock/rspec'
+require 'helpers/vcr_helpers'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -55,6 +56,10 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  # Including the vcr helpers that are we created in spec/helpers/vcr_helpers.rb
+  # To use these helper, you must pass vcr: true to the test block
+  config.include VCRHelpers, :vcr=> :true
 
 end
 
