@@ -17,7 +17,7 @@
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
-  
+
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
   # `:focus` metadata. When nothing is tagged with `:focus`, all examples
@@ -73,5 +73,38 @@ RSpec.configure do |config|
     # Prevents you from mocking or stubbing a method that does not exist on
     # a real object. This is generally recommended.
     mocks.verify_partial_doubles = true
+
   end
+
+# The settings below are used to configure the 'database_cleaner' gem. The instruction
+# can be found here: http://devblog.avdi.org/2012/08/31/configuring-database_cleaner-with-rails-rspec-capybara-and-selenium/
+
+  # This says that before the entire test suite runs, clear the test database out 
+  # completely. This gets rid of any garbage left over from interrupted or poorly-written
+  # tests—a common source of surprising test behavior.
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+  # This part sets the default database cleaning strategy to be transactions. Transactions 
+  # are very fast, and for all the tests where they do work—that is, any test where the entire 
+  # test runs in the RSpec process—they are preferable.
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+  end
+  # This line only runs before examples which have been flagged :js => true. By default, 
+  # these are the only tests for which Capybara fires up a test server process and drives 
+  # an actual browser window via the Selenium backend. For these types of tests, transactions 
+  # won’t work, so this code overrides the setting and chooses the “truncation” strategy instead.
+  config.before(:each, :js => true) do
+    DatabaseCleaner.strategy = :truncation
+  end
+  # These lines hook up database_cleaner around the beginning and end of each test, 
+  # telling it to execute whatever cleanup strategy we selected beforehand.
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+  
 end
