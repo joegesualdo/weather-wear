@@ -15,6 +15,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
+  gem 'guard-zeus'
+  gem 'guard-rspec', require: false
 end
 
 # Development/Tests ========================
@@ -28,4 +30,5 @@ end
 group :test do
   gem 'database_cleaner', '~> 1.3.0'
   gem 'shoulda-matchers', require: false
+  gem 'zeus'
 end
