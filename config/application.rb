@@ -28,3 +28,16 @@ module WeatherWear
     # config.i18n.default_locale = :de
   end
 end
+
+# This Rails configuration will apply to production, development, and test
+# if you have specific configuration for any of those specific enironments, add 
+# them to config/environments/{env}.rb files
+Rails.application.configure do
+# The code opens the config/local_env.yml file, reads each key/value pair, and sets environment variables.
+  config.before_configuration do
+    env_file = File.join(Rails.root, 'config', 'local_env.yml')
+    YAML.load(File.open(env_file)).each do |key, value|
+      ENV[key.to_s] = value
+    end if File.exists?(env_file)
+  end
+end

@@ -5,8 +5,10 @@ describe 'forecast.io Api', vcr: true do
     let(:response){get_weather_forecast_for_home}
 
     context 'response body' do
+      let(:response_body){response.body}
+
       it 'returns latitude attribute' do
-          json = JSON.parse(response.body)
+          json = JSON.parse(response_body)
           expect(json['latitude']).to_not be_nil
       end
     end
