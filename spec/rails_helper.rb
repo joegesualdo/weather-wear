@@ -62,5 +62,8 @@ RSpec.configure do |config|
   # To use these helper, you must pass vcr: true to the test block
   config.include VCRHelpers, :vcr=> :true
 
+  config.before(:suite) do
+    FactoryGirl.lint
+  end
 end
 

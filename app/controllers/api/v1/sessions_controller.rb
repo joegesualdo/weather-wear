@@ -40,13 +40,16 @@ module Api
 
       def missing_params
         data = {
-          error: "missing parameters"
+          error: "error",
+          message: 'missing parameters',
+          messages: [],
+          status: 400
         }
         render json: data, status: 400
       end
 
       def invalid_credentials
-        render json: {message: 'invalid credentials', status: 401}, status: 401
+        render json: {message: 'invalid credentials', messages: [], status: 400}, status: 400
       end
     end
   end
