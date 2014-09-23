@@ -13,6 +13,8 @@ gem 'devise'
 # API Formatting ========================
 gem 'jbuilder', '~> 2.0'
 
+# Weather Services ===================
+
 # Development ========================
 group :development do
   gem 'better_errors'
@@ -26,13 +28,13 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails', "~> 4.0"
   gem 'jazz_hands'
-  gem 'vcr'
-  gem 'webmock'
   gem 'pry-rails'
 end
 
 # Test ========================
 group :test do
+  gem 'vcr'
+  gem 'webmock'
   gem 'database_cleaner', '~> 1.3.0'
   gem 'shoulda-matchers', require: false
   gem 'zeus'

@@ -1,14 +1,18 @@
 class User < ActiveRecord::Base
+  # Gem Class Methods:  ----------------------------------------------------------------------------------------------
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Validations:  -----------------------------------------------------------------------------------------------------
   validates :email, presence: true
   validates :email, uniqueness: true
 
+  # Callbacks:  -------------------------------------------------------------------------------------------------------
   after_save :ensure_authentication_token!
- 
+
+  # Custom Methods:  --------------------------------------------------------------------------------------------------
   def ensure_authentication_token!
     if authentication_token.blank?
       self.authentication_token = generate_authentication_token
