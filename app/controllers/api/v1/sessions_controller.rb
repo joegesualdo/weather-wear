@@ -42,14 +42,13 @@ module Api
         data = {
           error: "error",
           message: 'missing parameters',
-          messages: [],
           status: 400
         }
         render json: data, status: 400
       end
 
       def invalid_credentials
-        render json: {message: 'invalid credentials', messages: [], status: 400}, status: 400
+        render json: {message: 'Invalid credentials', status: 400}, status: 400
       end
     end
   end

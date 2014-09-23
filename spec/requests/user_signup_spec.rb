@@ -50,11 +50,6 @@ describe 'Signing up' do
         it 'with a message key' do
           expect(@json['message']).to_not be_nil 
         end
-        context 'with a messages array' do
-          it 'exists' do
-            expect(@json['messages']).to_not be_nil 
-          end
-        end
       end
     end
   end

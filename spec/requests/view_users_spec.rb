@@ -5,7 +5,7 @@ describe 'User' do
 
   context "can view users" do
     it 'with authenticity token in heder' do
-      get "/api/v1/users", nil, {"X-AUTH-TOKEN" =>user.authentication_token}
+      get "/api/v1/users", nil, {"x-auth-token" =>user.authentication_token}
       expect(response.status).to be 200 
     end
     it 'with authenticity token in uri' do

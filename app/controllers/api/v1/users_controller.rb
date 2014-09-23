@@ -27,7 +27,7 @@ module Api
         if @user.save
           render json: @user, status: 201
         else
-          render json: {status: 'error', message: 'User was not signed in', messages:[]}, status: 400
+          render json: {status: 'error', message: 'User was not signed in'}, status: 400
         end
       end
      private
