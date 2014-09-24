@@ -1,6 +1,8 @@
 module Api
   module V1
     class WeatherController < BaseController
+      before_action :auth_only!
+
       def show
         zipcode   = Zipcode.find_by(zip: params[:zipcode])
         forecast_io_response = ForecastIO.forecast(zipcode.latitude, zipcode.longitude)
