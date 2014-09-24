@@ -1,8 +1,7 @@
 class Claritin 
   # Retrieve the claritin forecast for a given zipcode
   #
-  # @param latitude [String] Latitude.
-  # @param longitude [String] Longitude.
+  # @param zipcode [String] 
   def self.forecast(zipcode)
     raise "Zipcode must be a string" if !zipcode.is_a? String 
 
@@ -18,6 +17,11 @@ class Claritin
     response_body.slice!(0)
     response_body.slice!(-1)
 
+    # Response Description:
+    # You'll get back an array of 4 data points: \"forecast\":[0.6,1.0,8.3,9.0] 
+    # This is your 4 day forecast. The first one is current pollen count. The scale 
+    # is from 0 -12 if you'd like to make a thermometer or other GUI element. 
+    # It also has the primary type of pollen: \"pp\":\" Birch and Sweetgum.\" 
     response_body
   end
 end
