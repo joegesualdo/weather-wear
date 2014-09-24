@@ -5,7 +5,7 @@ describe Weather do
   path = File.join(Rails.root,'spec','fixtures','forecast_io_forecast_for_home_payload.txt')
   fake_forecast_io_payload = File.open(path).read
 
-  path = File.join(Rails.root,'spec','fixtures','claritin_forecast_for_home_payload.txt')
+  path = File.join(Rails.root,'spec','fixtures','claritin_forecast_for_jersey_city_payload.txt')
   fake_claritin_payload = File.open(path).read
 
   context 'initialized with forecastIO payload and claritin payload' do

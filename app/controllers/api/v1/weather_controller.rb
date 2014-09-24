@@ -8,7 +8,8 @@ module Api
       def show
         zipcode   = Zipcode.find_by(zip: params[:zipcode])
         forecast_io_response = ForecastIO.forecast(zipcode.latitude, zipcode.longitude)
-        weather   = Weather.new(forecast_io_response)
+        claritin_response = Claritin.forecast(zipcode.zip)
+        weather   = Weather.new(forecast_io_response, claritin_response)
 
         formatted_response = format_response(zipcode, weather)
 
@@ -36,7 +37,8 @@ module Api
             current_temperature: weather.current_temperature,
             city: zipcode.city,
             state: zipcode.state,
-            zipcode: zipcode.zip
+            zipcode: zipcode.zip,
+            pollen: weather.current_pollen
           }
         }
         data

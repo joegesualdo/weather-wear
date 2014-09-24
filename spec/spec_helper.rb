@@ -112,4 +112,13 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
   
+# The setting below are used to setup VCR recordings
+  # Before running teh tests, get the response from our different endpoints and store
+  # them in a cesset
+  config.before(:suite) do
+    url = "http://www.claritin.com/weatherpollenservice/weatherpollenservice.svc/getforecast/07302"
+    VCR.use_cassette('claritin_forecast_for_jersey_city') do
+      Net::HTTP.get_response(URI(url))
+    end
+  end
 end

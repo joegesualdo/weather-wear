@@ -30,7 +30,7 @@ describe Zipcode do
   # Class Methods:  -----------------------------------------------------------------------------------------------------
   context "#find_by_latitude_and_longitude" do
     it 'returns correct zipcode record' do
-      zipcode2 = Zipcode.find_by_latitude_and_longitude(40.427561, -74.1069)
+      zipcode2 = Zipcode.find_by_latitude_and_longitude(40.721602, -74.04703)
       expect(zipcode2.zip).to eq zipcode1.zip
     end
   end
