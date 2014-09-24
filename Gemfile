@@ -21,6 +21,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'guard-zeus'
   gem 'guard-rspec', require: false
+  gem 'annotate', '~> 2.6.5'
 end
 
 # Development/Tests ========================

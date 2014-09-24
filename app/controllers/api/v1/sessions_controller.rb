@@ -1,6 +1,7 @@
 module Api
   module V1
     class SessionsController < BaseController
+      # Actions:  -------------------------------------------------------------------------------------------------------
       def create
         return missing_params unless (params[:email] && params[:password])
 
@@ -28,8 +29,11 @@ module Api
         render json: { user_id: @user.id }, status: 200
       end
 
+     # Private: Methods  -------------------------------------------------------------------------------------------------------
       private
 
+      # returns the user that has a matching email and password, if there is one
+      # returns false if there isn't a user that has the email and password
       def user_from_credentials
         if user = User.find_for_database_authentication(email: params[:email])
           if user.valid_password? params[:password]
@@ -38,6 +42,7 @@ module Api
         end
       end
 
+      # renders a json response for missing parameters
       def missing_params
         data = {
           error: "error",
@@ -47,6 +52,7 @@ module Api
         render json: data, status: 400
       end
 
+      # renders a json response for 'Invalid credentials' 
       def invalid_credentials
         render json: {message: 'Invalid credentials', status: 400}, status: 400
       end

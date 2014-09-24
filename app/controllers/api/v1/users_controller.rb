@@ -1,11 +1,12 @@
 module Api
   module V1
     class UsersController < BaseController
+      # Callbacks:  -------------------------------------------------------------------------------------------------------
       # User needs to be authorized before accessing any actions
       before_action :auth_only!, except: [:create]
-
       before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+      # Actions:  -------------------------------------------------------------------------------------------------------
       def index
         if params[:ids]
           # Can take a parameter with multiple ids listed:
@@ -15,11 +16,11 @@ module Api
         else
           @users = User.all
         end
-        respond_with @users
+        render json: @users
       end
 
       def show
-        respond_with @user
+        render json: current_user
       end
 
       def create
@@ -30,16 +31,20 @@ module Api
           render json: {status: 'error', message: 'User was not signed in'}, status: 400
         end
       end
-     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_user
-        @user = User.find(params[:id])
-      end
 
-      # Never trust parameters from the scary internet, only allow the white list through.
-      def user_params 
-        params.require(:user).permit(:email, :password)
-      end
+     # Private: Methods  -------------------------------------------------------------------------------------------------------
+     private
+
+     # Use callbacks to share common setup or constraints between actions.
+     def set_user
+       current_user
+     end
+
+     # Never trust parameters from the scary internet, only allow the white list
+     # this defines what parameters we accepte for a user
+     def user_params 
+       params.require(:user).permit(:email, :password)
+     end
     end
   end
 end
