@@ -13,7 +13,8 @@ namespace :import_zipcodes_csv do
     csv = CSV.parse(csv_text, :headers => true)
     # Loop through all the zipcode and create a Zipcode record for each
     csv.each do |row|
-      zipcode = Zipcode.create!(row.to_hash)
+      zipcode = Zipcode.new(row.to_hash)
+      zipcode.save(validate: false)
       if zipcode
         puts "#{zipcode.zip} created!"
       end
