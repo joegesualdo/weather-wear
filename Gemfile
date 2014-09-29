@@ -28,7 +28,10 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails', "~> 4.0"
-  gem 'jazz_hands'
+  # Removing due to dependency on debugger gem, which
+  # no longer works with ruby 2.X
+  # TODO: find alternative for console style
+  # gem 'jazz_hands'
   gem 'pry-rails'
 end
 
