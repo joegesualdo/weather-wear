@@ -1,0 +1,1 @@
+{"nfs":{"/app":{"type":"nfs","guestpath":"/app","hostpath":"/Users/joegesualdo/code/rails/weather_wear","disabled":false,"map_uid":501,"map_gid":20,"nfs_udp":true,"nfs_version":3,"uuid":"3859475272"}},"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/joegesualdo/code/rails/weather_wear","disabled":false}}}
