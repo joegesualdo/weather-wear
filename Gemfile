@@ -13,6 +13,9 @@ gem 'devise'
 # API Formatting ========================
 gem 'jbuilder', '~> 2.0'
 
+# Making requests
+gem 'rack-cors', :require => 'rack/cors'
+
 # Weather Services ===================
 
 # Development ========================

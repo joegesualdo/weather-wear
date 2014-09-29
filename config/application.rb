@@ -26,6 +26,24 @@ module WeatherWear
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+   # TODO: As a proof of concept to not get the error:
+  #   XMLHttpRequest cannot load http://localhost:3001/api/v1/users. No 'Access-Control-Allow-Origin' 
+  #   header is present on the requested resource. Origin 'http://localhost:4200' is therefore not 
+  #   allowed access.
+  # Below I allowed all origins and all resources to make post requests, we must change this
+  # before pushing to production
+  # https://github.com/cyu/rack-cors
+   config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        # resource %r{/users/\d+.json},
+        # :headers => ['Origin', 'Accept', 'Content-Type'],
+        # :methods => [:put, :delete]
+      end
+    end
+
   end
 end
 
