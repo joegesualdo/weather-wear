@@ -31,24 +31,26 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Content-Length:
-      - '1529'
+      - '1522'
       Date:
-      - Sat, 27 Sep 2014 17:28:40 GMT
+      - Tue, 30 Sep 2014 21:24:48 GMT
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: "\"{\\\"pollenForecast\\\":{\\\"zip\\\":\\\"07302\\\",\\\"city\\\":\\\"JERSEY
-        CITY\\\",\\\"state\\\":\\\"NJ\\\",\\\"forecast\\\":[3.5,3.0,3.9,3.0],\\\"pp\\\":\\\"Ragweed
-        and Chenopods.\\\",\\\"timestamp\\\":\\\"Sep 27, 2014 12:30:08 PM\\\"},\\\"weatherForecast\\\":{\\\"date\\\":\\\"Sep
-        27, 2014 1:28:40 PM\\\",\\\"city\\\":\\\"Jersey City\\\",\\\"state\\\":\\\"NJ\\\",\\\"zip\\\":\\\"07302\\\",\\\"forecast\\\":[{\\\"lowF\\\":60,\\\"highF\\\":81,\\\"iconDay\\\":\\\"3200\\\",\\\"iconNight\\\":\\\"3100\\\",\\\"skyDay\\\":32,\\\"skyNight\\\":31,\\\"phraseDay\\\":\\\"Sunny\\\",\\\"phraseNight\\\":\\\"Clear\\\",\\\"date\\\":\\\"Sep
-        27, 2014 12:00:00 AM\\\"},{\\\"lowF\\\":62,\\\"highF\\\":83,\\\"iconDay\\\":\\\"3400\\\",\\\"iconNight\\\":\\\"2900\\\",\\\"skyDay\\\":34,\\\"skyNight\\\":29,\\\"phraseDay\\\":\\\"Mostly
-        Sunny\\\",\\\"phraseNight\\\":\\\"Partly Cloudy\\\",\\\"date\\\":\\\"Sep 28,
-        2014 12:00:00 AM\\\"},{\\\"lowF\\\":63,\\\"highF\\\":79,\\\"iconDay\\\":\\\"2600\\\",\\\"iconNight\\\":\\\"9000\\\",\\\"skyDay\\\":26,\\\"skyNight\\\":29,\\\"phraseDay\\\":\\\"Cloudy\\\",\\\"phraseNight\\\":\\\"Clouds
-        Early\\/Clearing Late\\\",\\\"date\\\":\\\"Sep 29, 2014 12:00:00 AM\\\"},{\\\"lowF\\\":60,\\\"highF\\\":70,\\\"iconDay\\\":\\\"2600\\\",\\\"iconNight\\\":\\\"1100\\\",\\\"skyDay\\\":26,\\\"skyNight\\\":11,\\\"phraseDay\\\":\\\"Cloudy\\\",\\\"phraseNight\\\":\\\"Showers\\\",\\\"date\\\":\\\"Sep
-        30, 2014 12:00:00 AM\\\"},{\\\"lowF\\\":59,\\\"highF\\\":69,\\\"iconDay\\\":\\\"1100\\\",\\\"iconNight\\\":\\\"1100\\\",\\\"skyDay\\\":11,\\\"skyNight\\\":11,\\\"phraseDay\\\":\\\"Showers\\\",\\\"phraseNight\\\":\\\"Showers\\\",\\\"date\\\":\\\"Oct
-        1, 2014 12:00:00 AM\\\"},{\\\"lowF\\\":56,\\\"highF\\\":67,\\\"iconDay\\\":\\\"1100\\\",\\\"iconNight\\\":\\\"6100\\\",\\\"skyDay\\\":11,\\\"skyNight\\\":45,\\\"phraseDay\\\":\\\"Showers\\\",\\\"phraseNight\\\":\\\"Showers
-        Early\\\",\\\"date\\\":\\\"Oct 2, 2014 12:00:00 AM\\\"}]},\\\"result\\\":true}\""
+        CITY\\\",\\\"state\\\":\\\"NJ\\\",\\\"forecast\\\":[2.3,2.3,2.3,1.8],\\\"pp\\\":\\\"Ragweed
+        and Chenopods.\\\",\\\"timestamp\\\":\\\"Sep 30, 2014 3:31:07 PM\\\"},\\\"weatherForecast\\\":{\\\"date\\\":\\\"Sep
+        30, 2014 5:24:48 PM\\\",\\\"city\\\":\\\"Jersey City\\\",\\\"state\\\":\\\"NJ\\\",\\\"zip\\\":\\\"07302\\\",\\\"forecast\\\":[{\\\"lowF\\\":60,\\\"highF\\\":73,\\\"iconDay\\\":\\\"3000\\\",\\\"iconNight\\\":\\\"2900\\\",\\\"skyDay\\\":30,\\\"skyNight\\\":29,\\\"phraseDay\\\":\\\"Partly
+        Cloudy\\\",\\\"phraseNight\\\":\\\"Partly Cloudy\\\",\\\"date\\\":\\\"Sep
+        30, 2014 12:00:00 AM\\\"},{\\\"lowF\\\":59,\\\"highF\\\":70,\\\"iconDay\\\":\\\"2600\\\",\\\"iconNight\\\":\\\"2900\\\",\\\"skyDay\\\":26,\\\"skyNight\\\":29,\\\"phraseDay\\\":\\\"Cloudy\\\",\\\"phraseNight\\\":\\\"Partly
+        Cloudy\\\",\\\"date\\\":\\\"Oct 1, 2014 12:00:00 AM\\\"},{\\\"lowF\\\":58,\\\"highF\\\":72,\\\"iconDay\\\":\\\"3000\\\",\\\"iconNight\\\":\\\"2900\\\",\\\"skyDay\\\":30,\\\"skyNight\\\":29,\\\"phraseDay\\\":\\\"Partly
+        Cloudy\\\",\\\"phraseNight\\\":\\\"Partly Cloudy\\\",\\\"date\\\":\\\"Oct
+        2, 2014 12:00:00 AM\\\"},{\\\"lowF\\\":62,\\\"highF\\\":69,\\\"iconDay\\\":\\\"3000\\\",\\\"iconNight\\\":\\\"7300\\\",\\\"skyDay\\\":30,\\\"skyNight\\\":12,\\\"phraseDay\\\":\\\"Partly
+        Cloudy\\\",\\\"phraseNight\\\":\\\"Rain Late\\\",\\\"date\\\":\\\"Oct 3, 2014
+        12:00:00 AM\\\"},{\\\"lowF\\\":50,\\\"highF\\\":67,\\\"iconDay\\\":\\\"1200\\\",\\\"iconNight\\\":\\\"3100\\\",\\\"skyDay\\\":12,\\\"skyNight\\\":31,\\\"phraseDay\\\":\\\"Rain\\\",\\\"phraseNight\\\":\\\"Clear\\\",\\\"date\\\":\\\"Oct
+        4, 2014 12:00:00 AM\\\"},{\\\"lowF\\\":51,\\\"highF\\\":66,\\\"iconDay\\\":\\\"3200\\\",\\\"iconNight\\\":\\\"3100\\\",\\\"skyDay\\\":32,\\\"skyNight\\\":31,\\\"phraseDay\\\":\\\"Sunny\\\",\\\"phraseNight\\\":\\\"Clear\\\",\\\"date\\\":\\\"Oct
+        5, 2014 12:00:00 AM\\\"}]},\\\"result\\\":true}\""
     http_version: 
-  recorded_at: Sat, 27 Sep 2014 17:28:41 GMT
+  recorded_at: Tue, 30 Sep 2014 21:24:48 GMT
 recorded_with: VCR 2.9.3

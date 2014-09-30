@@ -19,10 +19,10 @@ describe 'Signing up' do
       end
       context 'the user object' do
         it 'with an email' do
-          expect(@json['email']).to_not be_nil 
+          expect(@json['user']['email']).to_not be_nil 
         end
         it 'returns authentication token' do
-          expect(@json['authentication_token']).to_not be_nil 
+          expect(@json['user']['authentication_token']).to_not be_nil 
         end
       end
     end

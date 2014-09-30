@@ -12,6 +12,7 @@ gem 'devise'
 
 # API Formatting ========================
 gem 'jbuilder', '~> 2.0'
+gem 'active_model_serializers'
 
 # Making requests
 gem 'rack-cors', :require => 'rack/cors'

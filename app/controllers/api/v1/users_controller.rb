@@ -3,7 +3,7 @@ module Api
     class UsersController < BaseController
       # Callbacks:  -------------------------------------------------------------------------------------------------------
       # User needs to be authorized before accessing any actions
-      before_action :auth_only!, except: [:create]
+      before_action :auth_only!, except: [:create, :index]
       before_action :set_user, only: [:show, :edit, :update, :destroy]
 
       # Actions:  -------------------------------------------------------------------------------------------------------
@@ -13,10 +13,11 @@ module Api
           #   /user?ids=1,2,3
           ids_array = params[:ids].split(",")
           @users = User.find(ids_array)
+          render json: @users
         else
           @users = User.all
+          render json: @users
         end
-        render json: @users
       end
 
       def show
