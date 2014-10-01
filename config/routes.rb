@@ -17,8 +17,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       post   'sign_in'  => 'sessions#create'
       delete 'sign_out' => 'sessions#destroy'
-      resources :users, only: [:index, :create]
-      get "user", to: "users#show"
+      resources :users, only: [:index, :create, :show]
+      #get "user", to: "users#show"
       get "weather/:zipcode", to: "weather#show"
     end
   end
