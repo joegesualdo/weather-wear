@@ -127,6 +127,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    redis (3.0.7)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -197,6 +198,7 @@ DEPENDENCIES
   pry-rails
   rack-cors
   rails (= 4.1.0)
+  redis
   rspec-rails (~> 3.0.0)
   shoulda-matchers
   vcr
