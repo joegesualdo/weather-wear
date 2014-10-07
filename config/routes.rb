@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       #get "user", to: "users#show"
       get "weather/:zipcode", to: "weather#show"
       get '/zipcode_suggestions/:term', to: 'zipcode_suggestions#index'
+      get '/city_suggestions/:term', to: 'city_suggestions#index'
 
     end
   end
