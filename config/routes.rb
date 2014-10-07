@@ -20,6 +20,9 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create, :show]
       #get "user", to: "users#show"
       get "weather/:zipcode", to: "weather#show"
+      get '/zipcode_suggestions/:term', to: 'zipcode_suggestions#index'
+      get '/city_suggestions/:term', to: 'city_suggestions#index'
+
     end
   end
 
