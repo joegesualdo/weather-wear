@@ -3,8 +3,12 @@ rvm:
 - 2.1.0
 addons:
   postgresql: '9.3'
+services:
+  - redis-server
 before_script:
-- psql -c 'create database weather_wear_test;' -U postgres
+  - psql -c 'create database weather_wear_test;' -U postgres
+  - bundle exec rake city_suggestions:index
+  - bundle exec rake zipcode_suggestions:index
 env:
   global:
   - secure: cmLmnG8koaka2uWQ765RY+UbxZHmnoIg2i3y4piJYtHLXfbzZ2gkkyOtqFGpJXQz57820QGB/9ulhk5c3VVbhtXGSpFohC9DfaVUPkfQYw0Y+OiunuTCCkaWE4zGwmKcFQiBf8Zr2WQhY6K1uJ63SYexm6TlXRs2qSH+3XXAXm4=
