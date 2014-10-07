@@ -5,10 +5,13 @@ addons:
   postgresql: '9.3'
 services:
   - redis-server
-before_script:
-  - psql -c 'create database weather_wear_test;' -U postgres
+script:
+  - RAILS_ENV=test bundle exec rake --trace db:migrate
+  - bundle exec rake db:test:prepare
   - bundle exec rake city_suggestions:index
   - bundle exec rake zipcode_suggestions:index
+before_script:
+  - psql -c 'create database weather_wear_test;' -U postgres
 env:
   global:
   - secure: cmLmnG8koaka2uWQ765RY+UbxZHmnoIg2i3y4piJYtHLXfbzZ2gkkyOtqFGpJXQz57820QGB/9ulhk5c3VVbhtXGSpFohC9DfaVUPkfQYw0Y+OiunuTCCkaWE4zGwmKcFQiBf8Zr2WQhY6K1uJ63SYexm6TlXRs2qSH+3XXAXm4=
