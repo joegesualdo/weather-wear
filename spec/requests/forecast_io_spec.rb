@@ -10,16 +10,14 @@ describe 'forecast.io Api', vcr: true do
     end
 
     context 'response body' do
-      let(:response_body){response.body}
+      let(:json_body){JSON.parse(response.body)}
 
       it 'returns latitude attribute' do
-          json = JSON.parse(response_body)
-          expect(json['latitude']).to_not be_nil
+          expect(json_body['latitude']).to_not be_nil
       end
 
       it 'returns longitude attribute' do
-          json = JSON.parse(response_body)
-          expect(json['longitude']).to_not be_nil
+          expect(json_body['longitude']).to_not be_nil
       end
     end
   end

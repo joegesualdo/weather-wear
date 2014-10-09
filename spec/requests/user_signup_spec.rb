@@ -2,16 +2,16 @@ require 'rails_helper'
 
 describe 'Signing up' do
   let!(:user){ FactoryGirl.create(:user) }
+  let(:json_body){JSON.parse(response.body)}
+  let(:user_count_before_post){User.count}
 
   context 'with valid email and password' do
     before :each do
       @user_count_before_post = User.count
       post "/api/v1/users", user: {email: "joe@test.com", password: "password"}
-      @response_body = response.body
-      @json = JSON.parse(@response_body)
     end
     it 'creates a new user record' do
-      expect(User.count).to equal @user_count_before_post+1 
+      expect(User.count).to equal @user_count_before_post + 1 
     end
     context 'responds with' do
       it '201 (created) status code' do
@@ -19,10 +19,10 @@ describe 'Signing up' do
       end
       context 'the user object' do
         it 'with an email' do
-          expect(@json['user']['email']).to_not be_nil 
+          expect(json_body['user']['email']).to_not be_nil 
         end
         it 'returns authentication token' do
-          expect(@json['user']['authentication_token']).to_not be_nil 
+          expect(json_body['user']['authentication_token']).to_not be_nil 
         end
       end
     end
@@ -32,8 +32,6 @@ describe 'Signing up' do
     before :each do
       @user_count_before_post = User.count
       post "/api/v1/users", user: {email: user.email, password: "password"}
-      @response_body = response.body
-      @json = JSON.parse(@response_body)
     end
 
     it "doesn't create a new user record" do
@@ -45,10 +43,10 @@ describe 'Signing up' do
       end
       context 'an error object' do
         it 'with a status key' do
-          expect(@json['status']).to_not be_nil 
+          expect(json_body['status']).to_not be_nil 
         end
         it 'with a message key' do
-          expect(@json['message']).to_not be_nil 
+          expect(json_body['message']).to_not be_nil 
         end
       end
     end
