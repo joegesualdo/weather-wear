@@ -27,6 +27,7 @@ group :development do
   gem 'guard-zeus'
   gem 'guard-rspec', require: false
   gem 'annotate', '~> 2.6.5'
+  gem 'rubocop', require: false
 end
 
 # Development/Tests ========================
